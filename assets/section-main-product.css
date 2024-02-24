@@ -188,8 +188,8 @@
   margin-bottom: 1rem;
 }
 
-/* task-a:「カートに追加する」ボタンは、ホバー時は青 */
-.product-form__submit:hover {
+/* task-a:「カートに追加する」ボタンは、在庫がある場合のホバー時は青 */
+.product-form___have-stock.product-form__submit:hover {
   background-color: blue;
 }
 
