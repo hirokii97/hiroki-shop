@@ -188,6 +188,11 @@
   margin-bottom: 1rem;
 }
 
+/* task-a:「カートに追加する」ボタンは、ホバー時は青 */
+.product-form__submit:hover {
+  background-color: blue;
+}
+
 .no-js .product-form__submit.button--secondary {
   --color-button: inherit;
   --color-button-text: inherit;
@@ -204,6 +209,18 @@
   .product-form__submit[aria-disabled='true'] {
     color: Window;
   }
+}
+
+/* task-a:「カートに追加する」ボタンは、在庫がない時にはグレイ */
+.product-form___no-stock {
+  background-color: gray;
+  color: white;
+}
+
+/* task-a:「カートに追加する」ボタンは、在庫がある時には緑 */
+.product-form___have-stock {
+  background-color: green;
+  color: white;
 }
 
 /* Overrides */
