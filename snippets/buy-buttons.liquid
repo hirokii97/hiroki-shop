@@ -93,6 +93,13 @@
             </span>
             {%- render 'loading-spinner' -%}
           </button>
+            {% comment %} 在庫が5個以上なら「Available!」を表示 {% endcomment %}
+            {% if product.variants.first.inventory_quantity >= 5 %}
+              <span class='product-form__Available_stock'>Available!</span>
+              {% comment %} 在庫が５個未満（4個以下）なら「Available!」を表示、在庫がない場合は表示しない {% endcomment %}
+                {%- elsif product.variants.first.inventory_quantity > 0 and product.variants.first.inventory_quantity <= 4 %}
+                  <span class='product-form__low_stock'>Low stock</span>
+            {%- endif -%}
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}
