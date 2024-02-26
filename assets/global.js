@@ -977,7 +977,23 @@ class VariantSelects extends HTMLElement {
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
+      this.updateVariantDetails(this.currentVariant);
     }
+  }
+
+  updateVariantDetails() {
+    const variants = document.querySelectorAll('.size')
+
+    const sizeInput = document.querySelectorAll('.js_size')[0]
+    const selected_size = sizeInput.querySelectorAll('input:checked')[0].value
+
+    variants.forEach((variant) => {
+      variant.style.display = 'none'
+      
+      if (selected_size == variant.id) {
+        variant.style.display = 'block'
+      }
+    }) 
   }
 
   updateOptions() {
